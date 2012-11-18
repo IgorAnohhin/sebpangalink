@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="component" group="" method="upgrade" >
+    <name>seb pangalink</name>
+    <creationDate>Nov 2012</creationDate>
+    <author>Igor Anohhin</author>
+    <authorUrl>http://ianohhin.eu</authorUrl>
+    <copyright>Copyright (C) 2012 Igor Anohhin</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1.0</version>
+    <description><![CDATA[<a href="http://www.seb.ee/ari/maksete-kogumine/maksete-kogumine-internetis" target="_blank">Pangalink</a> is a payment opportunity 
+	which gives risk-free additional value to your internet business. ]]>
+    </description>
+
+    <scriptfile>script.install.php</scriptfile>
+	<!-- Custom installer for 1.5 -->
+    <installfile>script.install.php</installfile>
+	<!-- Custom uninstaller for 1.5 -->
+    <uninstallfile>script.install.php</uninstallfile>
+
+    <administration>
+        <files>
+            <folder>files</folder>
+        </files>
+        <languages folder="files/administrator/language">
+            <language tag="en-GB">en-GB.plg_vmpayment_seb.ini</language>
+        </languages>
+    </administration>
+	
+
+</install>

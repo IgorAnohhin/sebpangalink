@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?><install version="1.5" type="plugin" group="vmpayment" >    
+	<name>VMPAYMENT_SEB</name>    
+	<creationDate>November 04 2012</creationDate>    
+	<author>Igor Anohhin</author>    
+	<authorUrl>http://ianohhin.eu</authorUrl>    
+	<copyright>Copyright (C) 2012 Igor Anohhin. All rights reserved.</copyright>    
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>    
+	<version>1.0</version>    
+	<description><![CDATA[<a href="http://www.seb.ee/ari/maksete-kogumine/maksete-kogumine-internetis" target="_blank">Pangalink</a> 
+	is a payment opportunity which gives risk-free additional value to your internet business. ]]>
+    </description>    
+	<files>
+		<filename plugin="swedbank">seb.php</filename>		
+		<filename plugin="swedbank">seb.xml</filename>
+    </files>    
+	<languages>
+		<language tag="en-GB">en-GB.plg_vmpayment_seb.ini</language>
+    </languages>    
+	<params addpath="/administrator/components/com_virtuemart/elements">
+		<param type="vmjpluginwarning" />
+		<param type="spacer" default="VMPAYMENT_SEB_PAYMENT_TITLE" level="level1" />
+		<param type="spacer" default="VMPAYMENT_SEB_PAYMENT_WARNING"   />
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_SEB_PAYMENT_SETTINGS" level="level1" />
+		<param	name="payment_logos" type="vmfiles" label="VMPAYMENT_SEB_LOGOS"
+             	description="VMPAYMENT_SEB_LOGOS_DESC"
+             	directory="/images/stories/virtuemart/payment"
+             	default="default" hide_default="1" hide_none="1"
+             	stripext="0"  exclude="^_" />
+		<!-- Seb params -->		
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_SEB_PARAMS" level="level1" />		
+		<param type="text" name="my_private_key"  size="50" label="VMPAYMENT_SEB_MY_PRIVATE_KEY"
+             default="your-private-key" description="VMPAYMENT_SEB_MY_PRIVATE_KEY_DESC" />			 		
+		<param type="spacer" default="" level="level1" />		
+		<param type="text" name="my_private_key_password" size="50" label="VMPAYMENT_SEB_MY_PRIVATE_KEY_PASSWORD"	default="" 
+			description="VMPAYMENT_SEB_MY_PRIVATE_KEY_PASSWORD_DESC" />				
+		<param type="spacer" default="" level="level1" />		
+		<param type="text" name="bank_certificate" size="50" label="VMPAYMENT_SEB_BANK_OPEN_KEY"	
+			default="swedbank-open-key" description="VMPAYMENT_SEB_BANK_OPEN_KEY_DESC" />				
+		<param type="spacer" default="" level="level1" />		
+		<param type="text" name="my_id" size="50" label="VMPAYMENT_SEB_YOUR_ID"		
+			default="your-id" description="VMPAYMENT_SEB_YOUR_ID_DESC" />				
+		<param type="spacer" default="" level="level1" />		
+		<param type="text" name="account_number" size="50" label="VMPAYMENT_SEB_ACCOUNT_NUMBER" 			
+			default="your-account-number" description="VMPAYMENT_SEB_ACCOUNT_NUMBER_DESC" />				
+		<param type="spacer" default="" level="level1" />		
+		<param type="text" name="account_owner" size="50" label="VMPAYMENT_SEB_ACCOUNT_OWNER" 		
+			default="bank-account-owner" description="VMPAYMENT_SEB_ACCOUNT_OWNER_DESC" />				
+		<param type="spacer" default="" level="level1" />		
+		<param name="testing" type="radio" default="1" label="VMPAYMENT_SEB_TESTING" description="VMPAYMENT_SEB_TESTING_DESC" >		
+			<option value="0">COM_VIRTUEMART_NO</option>			
+			<option value="1">COM_VIRTUEMART_YES</option>		
+		</param>		
+		<!-- Seb params end -->			 
+		<param type="spacer" default="" level="level1" />		
+		<param type="spacer" default="VMPAYMENT_SEB_RESTRICTIONS" level="level1" />			
+		<!-- BY DEFAULT seb currency= vendor currency -->		
+		<param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_SEB_CURRENCY" description="VMPAYMENT_SEB_CURRENCY_DESC" />		
+		<param name="email_currency" type="list" default="vendor" label="VMPAYMENT_SEB_EMAIL_CURRENCY" description="VMPAYMENT_SEB_EMAIL_CURRENCY_DESC"  >			
+			<option value="vendor">VMPAYMENT_SEB_EMAIL_CURRENCY_VENDOR</option>			
+			<option value="apyment">VMPAYMENT_SEB_EMAIL_CURRENCY_PAYMENT</option>		
+		</param>		
+		<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_SEB_COUNTRIES" description="VMPAYMENT_SEB_COUNTRIES_DESC"/>		
+		<param name="min_amount" type="text"  label="VMPAYMENT_SEB_MIN_AMOUNT" description="VMPAYMENT_SEB_MIN_AMOUNT_EXPLAIN" />		
+		<param name="max_amount" type="text"  label="VMPAYMENT_SEB_MAX_AMOUNT" description="VMPAYMENT_SEB_MAX_AMOUNT_EXPLAIN" />		
+		<param name="cost_per_transaction" type="text"  label="VMPAYMENT_SEB_COST_PER_TRANSACTION" description="VMPAYMENT_SEB_COST_PER_TRANSACTION_EXPLAIN" />		
+		<param name="cost_percent_total" type="text"  label="VMPAYMENT_SEB_COST_PERCENT_TOTAL" description="VMPAYMENT_SEB_COST_PERCENT_TOTAL_EXPLAIN" />		
+		<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_SEB_TAX" description="VMPAYMENT_SEB_TAX_EXPLAIN" />				
+		<param type="spacer" default="" level="level1" />		
+		<param type="spacer" default="VMPAYMENT_SEB_PAYMENT_PAGE" level="level1" />		
+		<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="U" 
+			label="VMPAYMENT_SEB_STATUS_PENDING" description="VMPAYMENT_SEB_STATUS_PENDING_EXPLAIN" />		
+		<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" 
+			label="VMPAYMENT_SEB_STATUS_SUCCESS" description="VMPAYMENT_SEB_STATUS_SUCCESS_EXPLAIN" />		
+		<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" 
+			label="VMPAYMENT_SEB_STATUS_FAILED" description="VMPAYMENT_SEB_STATUS_FAILED_EXPLAIN" />    
+	</params></install>
